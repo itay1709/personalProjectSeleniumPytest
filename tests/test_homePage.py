@@ -12,9 +12,14 @@ class TestHomePage:
         return self.homePage
 
     def test_upperNavigatorUI(self, homePage):
-        assert self.homePage.protoCommerceE().text == "ProtoCommerce"
-        assert self.homePage.homeBtnLinkE().text == "Home"
-        assert self.homePage.shopBtnLinkE().text == "Shop"
+        assert self.homePage.protoCommerceE().text == self.homePage.upperNavigatorFirstETxt
+        assert self.homePage.homeBtnLinkE().text == self.homePage.upperNavigatorSecondETxt
+        assert self.homePage.shopBtnLinkE().text == self.homePage.upperNavigatorThirdETxt
+
+    def test_upperNavigatorTagType(self, homePage):
+        assert self.homePage.protoCommerceE().tag_name == "a"
+        assert self.homePage.homeBtnLinkE().tag_name == "a"
+        assert self.homePage.shopBtnLinkE().tag_name == "a"
 
 
 
