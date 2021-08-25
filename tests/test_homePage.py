@@ -35,7 +35,6 @@ class TestHomePage:
         assert self.homePage.nameAlertE().text == self.homePage.nameAlertEmptyChar
         self.homePage.homeBtnLinkE().click()
 
-    @pytest.mark.reg
     def test_validateGenderDropdown(self, homePage):
         self.GenderDropdownA = []
         self.genderSelect = Select(self.homePage.genderSelectE())
@@ -67,7 +66,6 @@ class TestHomePage:
     def test_dateInputType(self, homePage):
         assert self.homePage.dateOfBirthInputE().get_attribute("type") == "date"
 
-    @pytest.mark.reg
     def test_e2eForm(self, homePage):
         self.homePage.nameInputE().send_keys(self.homePage.formE2eName)
         self.homePage.emailInputE().send_keys(self.homePage.formE2eEmail)
