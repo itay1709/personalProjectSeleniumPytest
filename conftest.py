@@ -1,5 +1,6 @@
 import pytest
 from selenium import webdriver
+from selenium.webdriver.support.select import Select
 
 
 @pytest.fixture(scope="class")
@@ -10,3 +11,5 @@ def setupBrowser(request):
     request.cls.driver = driver
     yield
     driver.close()
+
+
