@@ -20,9 +20,6 @@ class HomePage:
     formE2ePassword = "itay1234"
     successMsgAlert = "Success! The Form has been submitted successfully!"
 
-
-
-
     #locators:
     protoCommerce = (By.CLASS_NAME, "navbar-brand")
     homeBtnLink = (By.LINK_TEXT, "Home")
