@@ -12,7 +12,7 @@ class ShopPage:
     categoriesSideMenu = ['Category 1', 'Category 2', 'Category 3']
 
     #locators:
-    checkOutBtn = (By.XPATH, "//li[@class='nav-item active']")
+    checkOutBtn = (By.XPATH, "//a[@class='nav-link btn btn-primary']")
     shopHeadline = (By.XPATH, "//h1[@class='my-4']")
     categories = (By.XPATH, "//div[@class='list-group']/a")
     cardDevicesName = (By.XPATH, "//h4[@class='card-title']/a")
@@ -45,6 +45,8 @@ class ShopPage:
 
 
 
+
+#  validate add button
 
 
 

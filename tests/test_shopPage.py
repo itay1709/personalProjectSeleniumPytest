@@ -34,4 +34,28 @@ class TestShopPage:
         assert self.devicesListA == self.shopPage.devices
         self.homePage.homeBtnLinkE()
 
+    def test_validateCategoryNavigation(self, homePage, shopPage ):
+        self.homePage.shopBtnLinkE().click()
+        self.shopPage.categoriesE()[0].click()
+        assert self.homePage.nameFieldE().is_enabled()
+        self.homePage.shopBtnLinkE().click()
+
+    def test_validateCategoryNavigation1(self, homePage, shopPage ):
+        self.homePage.shopBtnLinkE().click()
+        self.shopPage.categoriesE()[1].click()
+        assert self.homePage.nameFieldE().is_enabled()
+        self.homePage.shopBtnLinkE().click()
+
+    def test_validateCategoryNavigation2(self, homePage, shopPage ):
+        self.homePage.shopBtnLinkE().click()
+        self.shopPage.categoriesE()[2].click()
+        assert self.homePage.nameFieldE().is_enabled()
+        self.homePage.shopBtnLinkE().click()
+
+    def test_validateCheckOutBtnCounter(self, homePage, shopPage ):
+        self.homePage.shopBtnLinkE().click()
+        breakpoint()
+        for i in self.shopPage.cardDevicesAddBtnE():
+            i.click()
+        assert "( 4 )" in self.shopPage.checkOutBtnE().text
 
