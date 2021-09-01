@@ -35,3 +35,13 @@ class TestSummaryPage:
         assert self.summaryPage.tableTotalE().text == "Total"
         assert "0" in self.summaryPage.tableAmountE().text
         self.homePage.homeBtnLinkE().click()
+
+    def test_validateAddOneDevice(self, homePage, shopPage, summaryPage):
+        self.homePage.shopBtnLinkE().click()
+        deviceNameA = self.shopPage.cardDevicesNameE()[1].text
+        self.shopPage.cardDevicesAddBtnE()[1].click()
+        assert "1" in self.shopPage.checkOutBtnE().text
+        self.shopPage.checkOutBtnE().click()
+        assert self.summaryPage.tableDeviceNameE()[0].text == deviceNameA
+        assert self.summaryPage.tableQuantityE()[0].get_attribute("value") == "1"
+        assert self.summaryPage.tablePriceE()[0].text == self.summaryPage.tablePriceTotE()[0].text == self.summaryPage.tableAmountE().text

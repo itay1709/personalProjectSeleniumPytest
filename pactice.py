@@ -14,14 +14,20 @@ wait = WebDriverWait(driver, 5)
 wait.until(expected_conditions.presence_of_element_located((By.XPATH, "//label[text()='Name']")))
 shopBtn = driver.find_element_by_link_text("Shop")
 shopBtn.click()
+addBtn = driver.find_elements_by_xpath("//div[@class='card-footer']/button")
+addBtn[1].click()
 checkOutBtn = driver.find_element_by_xpath("//a[@class='nav-link btn btn-primary']")
 checkOutBtn.click()
-homeBtn = driver.find_elements_by_xpath("//div[@class='list-group']/a")
-tableHead = driver.find_elements_by_xpath("//table/thead/tr/th")
-extableHead = []
-for i in tableHead:
-    extableHead.append(i.text)
-print(extableHead)
+quantity = driver.find_elements_by_id("exampleInputEmail1")
+for i in quantity:
+    print(i.get_attribute("value"))
+#homeBtn = driver.find_elements_by_xpath("//div[@class='list-group']/a")
+#tableHead = driver.find_elements_by_xpath("//table/thead/tr/th")
+
+#extableHead = []
+#for i in tableHead:
+#    extableHead.append(i.text)
+#print(extableHead)
 
 
 #driver.quit()
