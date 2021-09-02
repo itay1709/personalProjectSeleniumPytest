@@ -70,6 +70,7 @@ class TestSummaryPage:
         tableTotPriceTxt = self.summaryPage.tableAmountE().text[3:]
         tableTotPriceInt = int(tableTotPriceTxt)
         assert tableTotPriceInt == 0
+        self.homePage.homeBtnLinkE().click()
 
     def test_validateAddAllDevice(self, homePage, shopPage, summaryPage ):
         self.homePage.shopBtnLinkE().click()
@@ -94,4 +95,5 @@ class TestSummaryPage:
         tableTotPriceTxt = self.summaryPage.tableAmountE().text[3:]
         tableTotPriceInt = int(tableTotPriceTxt)
         assert SumPrice == tableTotPriceInt
+        self.homePage.homeBtnLinkE().click()
 
