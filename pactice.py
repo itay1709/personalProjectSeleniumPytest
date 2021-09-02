@@ -19,8 +19,13 @@ addBtn[1].click()
 checkOutBtn = driver.find_element_by_xpath("//a[@class='nav-link btn btn-primary']")
 checkOutBtn.click()
 quantity = driver.find_elements_by_id("exampleInputEmail1")
-for i in quantity:
-    print(i.get_attribute("value"))
+price = driver.find_elements_by_xpath("//tbody/tr[1]/td[3]/strong[1]")
+quantity[0].clear()
+quantity[0].send_keys("2")
+priceTxt = price[0].text[3:]
+priceInt = int(priceTxt)
+print(type(priceInt))
+print(price[0].text[3:])
 #homeBtn = driver.find_elements_by_xpath("//div[@class='list-group']/a")
 #tableHead = driver.find_elements_by_xpath("//table/thead/tr/th")
 
