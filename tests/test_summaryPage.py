@@ -97,3 +97,22 @@ class TestSummaryPage:
         assert SumPrice == tableTotPriceInt
         self.homePage.homeBtnLinkE().click()
 
+    def test_validateRemoveOneDevice(self, homePage, shopPage, summaryPage ):
+        self.homePage.shopBtnLinkE().click()
+        for i in self.shopPage.cardDevicesAddBtnE():
+            i.click()
+        self.shopPage.checkOutBtnE().click()
+        assert len(self.summaryPage.tableDeviceNameE()) == 4
+        self.summaryPage.tableRemoveBtnE()[2].click()
+        assert len(self.summaryPage.tableDeviceNameE()) == 3
+        priceTxt = []
+        for i in self.summaryPage.tablePriceE():
+            priceTxt.append(i.text[3:])
+        priceInt = []
+        for i in priceTxt:
+            priceInt.append(int(i))
+        SumPrice = sum(priceInt)
+        tableTotPriceTxt = self.summaryPage.tableAmountE().text[3:]
+        tableTotPriceInt = int(tableTotPriceTxt)
+        assert SumPrice == tableTotPriceInt
+
