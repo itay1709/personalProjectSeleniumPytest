@@ -80,4 +80,12 @@ class TestCheckoutPage:
             assert "in" or "In" in i.text
         self.checkOutPage.homeBtnE().click()
 
+    def test_validateSuccessMsg(self, checkOutPage, homePage, summaryPage, shopPage):
+        self.homePage.shopBtnLinkE().click()
+        self.shopPage.checkOutBtnE().click()
+        self.summaryPage.checkOutBtnE().click()
+        self.checkOutPage.purchaseBtnE().click()
+        assert self.checkOutPage.successMsgTxt in self.checkOutPage.successMsgE().text
+        self.checkOutPage.homeBtnE().click()
+
 

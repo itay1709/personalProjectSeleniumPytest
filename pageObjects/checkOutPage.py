@@ -12,6 +12,7 @@ class CheckOutPage:
     checkBoxTxt = "I agree with the term & Conditions"
     termsAndConditionTxt = "Please read the following terms and conditions carefully as it sets out the terms of a " \
                            "legally binding agreement between you (the reader) and Business Standard Private Limited."
+    successMsgTxt = "Success! Thank you! Your order will be delivered in next few weeks :-)"
 
     #locators:
     checkOutBtn = (By.XPATH, "//a[@class='nav-link btn btn-primary']")
